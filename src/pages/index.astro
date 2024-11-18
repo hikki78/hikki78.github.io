@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialCard from '../components/SocialCard';
+import ParticleBackground from '../components/ParticleBackground';
+import Sparkles from '../components/Sparkles';
+import { motion } from "framer-motion";
+---
+
+<Layout title="Modern Portfolio">
+  <ParticleBackground client:load />
+  <Sparkles client:load />
+  
+  <main class="container mx-auto px-6 py-20 relative z-10">
+    <div class="text-center mb-20">
+      <h1 
+        class="text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-white animate-fade-in"
+      >
+        Welcome to My Space
+      </h1>
+      <p class="text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
+        Connect with me across the digital universe and explore my work
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+      <SocialCard
+        client:load
+        title="GitHub"
+        icon="🐱"
+        link="https://github.com/hikki78"
+        color="bg-[#24292e]/90"
+      />
+      
+      <SocialCard
+        client:load
+        title="Twitter"
+        icon="🐦"
+        link="https://x.com/HikkiScript"
+        color="bg-[#1DA1F2]/90"
+      />
+      
+      <SocialCard
+        client:load
+        title="Portfolio"
+        icon="🌐"
+        link="https://megh.codes/"
+        color="bg-[#6200ea]/90"
+      />
+      
+      <SocialCard
+        client:load
+        title="Line"
+        icon="💬"
+        link="https://line.me/ti/p/KhXLYESmrb"
+        color="bg-[#00B900]/90"
+      />
+      
+      <SocialCard
+        client:load
+        title="YouTube"
+        icon="📺"
+        link="https://www.youtube.com/@HikkiScript"
+        color="bg-[#FF0000]/90"
+      />
+
+      <SocialCard
+        client:load
+        title="Coming Soon"
+        icon="✨"
+        link="#"
+        color="bg-[#9C27B0]/30"
+      />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>

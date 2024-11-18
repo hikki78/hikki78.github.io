@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Modern Portfolio Website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gradient-to-br from-primary/80 via-accent/80 to-secondary/80 min-h-screen overflow-x-hidden backdrop-blur-3xl">
+    <div class="fixed inset-0 bg-[url('/noise.png')] opacity-5 pointer-events-none"></div>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --font-inter: 'Inter', sans-serif;
+  }
+  
+  html {
+    font-family: var(--font-inter);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  ::selection {
+    background: rgba(98, 0, 234, 0.2);
+  }
+</style>
